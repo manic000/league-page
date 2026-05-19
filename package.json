@@ -1,10 +1,10 @@
 {
   "name": "league-page",
   "version": "2.5.1",
-  "homepage": "https://github.com/jake-kelley/ff-league-page",
+  "homepage": "https://github.com/manic000/league-page",
   "repository": {
     "type": "git",
-    "url": "git://github.com/jake-kelley/ff-league-page.git"
+    "url": "git://github.com/manic000/league-page.git"
   },
   "author": {
     "name": "Jake Kelley",
@@ -30,7 +30,7 @@
     }
   ],
   "bugs": {
-    "url": "https://github.com/jake-kelley/ff-league-page/issues"
+    "url": "https://github.com/manic000/league-page/issues"
   },
   "license": "MIT",
   "engines": {
