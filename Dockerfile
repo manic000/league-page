@@ -1,43 +1,43 @@
-# Stage 1: Builder
-# Resolving version mismatch: utilizing Node 20 LTS Alpine for security, compatibility, and a slim footprint
+# Stage 1: Dependency Install & Build
 FROM node:20-alpine AS builder
 
 WORKDIR /app
-
-# Copy dependency graphs first to leverage Docker layer caching
 COPY package.json package-lock.json ./
 
-# Use ci (Clean Install) for reproducible, deterministic builds
-RUN npm ci
+# 1. Install dependencies but block the 'prepare' script from firing prematurely
+RUN npm ci --ignore-scripts
 
-# Copy the rest of the application code
+# 2. Copy the rest of the application code, including /static and /src/theme
 COPY . .
 
-# Trigger svelte.config.js to fallback to @sveltejs/adapter-node
-ENV DOCKER_BUILD=true
+# 3. Manually trigger the prepare script now that the required directories exist
+RUN npm run prepare
 
-# Build the SvelteKit app
-RUN npm run build
+# 4. Trigger adapter-node directly, bypassing the broken --verbose flag in package.json
+RUN DOCKER_BUILD=true npm run build
 
-# Remove development dependencies to keep the final image minimal
-RUN npm prune --production
+# 5. Prune dev dependencies to prepare a clean node_modules layer for production
+RUN npm prune --omit=dev
 
-# Stage 2: Runner
-FROM node:20-alpine
+# Stage 2: Production Runtime
+FROM node:20-alpine AS runner
 
 WORKDIR /app
 
-# Copy built assets and production node_modules from the builder stage
-COPY --from=builder /app/build build/
-COPY --from=builder /app/node_modules node_modules/
-COPY package.json .
+# Tini manages PID 1 signals to prevent Node from hanging during shutdown
+#RUN apk add --no-cache tini
 
-# Define production environment variables
-ENV NODE_ENV=production
+# Import strictly the necessary artifacts from the builder
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/build ./build
+COPY --from=builder /app/node_modules ./node_modules
+
+# Bind host to 0.0.0.0 internally so Docker can route traffic
 ENV PORT=3000
+ENV HOST=0.0.0.0
+ENV NODE_ENV=production
 
-# Expose the internal port (Docker Compose will map this internally to Nginx)
 EXPOSE 3000
 
-# Start the Node adapter application
+#ENTRYPOINT ["tini", "--"]
 CMD ["node", "build/index.js"]
