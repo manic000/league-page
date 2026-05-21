@@ -124,7 +124,7 @@
     h1 {
         font-size: 2em;
         margin: 0 0 0.2em;
-        background: linear-gradient(90deg, #1de9d7 0%, #1de9d7 100%);
+        background: linear-gradient(90deg, #51a2ff 0%, #51a2ff 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -151,7 +151,7 @@
     }
     .search input:focus {
         outline: none;
-        border-color: #1de9d7;
+        border-color: #51a2ff;
         box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
     }
     .search-meta {
@@ -270,7 +270,7 @@
         margin: 0 0 0.6em;
         font-size: 1.4em;
         line-height: 1.25em;
-        color: #1de9d7;
+        color: #51a2ff;
     }
     .article-content {
         font-size: 0.95em;
@@ -317,7 +317,7 @@
         margin: 0.2em 0;
     }
     .article-content :global(a) {
-        color: #1de9d7;
+        color: #51a2ff;
         text-decoration: underline;
     }
     .article-content :global(strong) {

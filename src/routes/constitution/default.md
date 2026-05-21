@@ -1,4 +1,4 @@
-# MFFGA — Dynasty Constitution
+# Bonecrusher Fantasy Football League Constitution
 
 *A living document — major changes are ratified before each new season.*
 
@@ -6,21 +6,18 @@
 
 ### 1.1 Format
 
-MFFGA — Dynasty is a 10-team dynasty fantasy football league with deep rosters and an emphasis on long-term team-building. Format details:
-
-- 10 teams, 1.0 PPR scoring
-- 28 roster spots (11 starters + 17 bench) plus 4 IR slots
-- $100 FAAB waiver budget
-- 4-round rookie draft each offseason
-- 6-team playoff starting Week 15 (Week 18 is not used)
-- Trade deadline: end of Week 11
+- 10 teams, 6 keepers
+- ? roster spots (? starters + ? bench) plus ? IR slots
+- 6-team playoff starting Week 14 (Week 18 is not used)
+- League championship spans 2 weeks (16 & 17)
+- Trade deadline: end of Week 13
 
 ### 1.2 Divisions
 
 The league is split into two divisions:
 
-- **Noob Football Conference (NFC)**
-- **Amateur Football Conference (AFC)**
+- **Lombardi Division**
+- **Madden Division**
 
 Each division winner receives an automatic playoff berth and a first-round bye.
 
@@ -29,19 +26,22 @@ Each division winner receives an automatic playoff berth and a first-round bye.
 
 ### 2.1 Starting Lineup
 
-11 starters per week:
+? starters per week:
 
 - 1 × QB
 - 2 × RB
 - 2 × WR
 - 1 × TE
-- 5 × FLEX (RB / WR / TE)
+- 1 x K
+- 1 x DEF
+- ? × RB/WR
+- ? x WR/TE
+- ? x RB/WR/TE
 
-This league does not roster kickers or team defenses.
 
 ### 2.2 Bench & IR
 
-17 bench spots and 4 IR slots are available per team (28 active roster spots total, plus 4 reserve).
+? bench spots and ? IR slots are available per team (? active roster spots total, plus ? reserve).
 
 A player must be designated as IR, Out, Doubtful, or COVID in the Sleeper app to occupy an IR slot.
 
@@ -50,27 +50,24 @@ A player must be designated as IR, Out, Doubtful, or COVID in the Sleeper app to
 
 Full scoring is mirrored from the Sleeper league settings. The headline numbers:
 
-### 3.1 Offensive Scoring
+### 3.1 Scoring
 
 | Stat | Points |
 | --- | --- |
 | Passing yard | 0.04 (1 / 25 yds) |
-| Passing TD | 4 |
+| Passing TD | 6 |
 | Interception thrown | −2 |
 | Rushing yard | 0.1 (1 / 10 yds) |
 | Rushing TD | 6 |
-| Reception | 1 (full PPR) |
+| Reception | 0.5 (half PPR) |
 | Receiving yard | 0.1 (1 / 10 yds) |
 | Receiving TD | 6 |
 | 2-point conversion | 2 |
+| Fumble | −1 |
 | Fumble lost | −1 |
 | Fumble recovery TD | 6 |
 
-### 3.2 Defensive & Special Teams
-
-Although team defenses are not rostered, individual defensive plays scored by offensive players (recovered fumbles, etc.) follow Sleeper's standard 2026 settings. See the Sleeper league page for the complete list.
-
-### 3.3 Voting on Scoring
+### 3.2 Voting on Scoring
 
 The scoring system will not change without a simple majority league vote prior to the start of the next season.
 

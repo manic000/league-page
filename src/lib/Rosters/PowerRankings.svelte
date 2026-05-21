@@ -4,7 +4,7 @@
     export let rankings, leagueTeamManagers;
 
     const POS_META = [
-        { key: 'QB',    label: 'QB',    color: '#1de9d7' },
+        { key: 'QB',    label: 'QB',    color: '#51a2ff' },
         { key: 'RB',    label: 'RB',    color: '#43a047' },
         { key: 'WR',    label: 'WR',    color: '#26a69a' },
         { key: 'TE',    label: 'TE',    color: '#ef6c00' },
@@ -58,7 +58,7 @@
     .panel h2 {
         margin: 0 0 0.2em;
         font-size: 1.4em;
-        background: linear-gradient(90deg, #1de9d7 0%, #1de9d7 100%);
+        background: linear-gradient(90deg, #51a2ff 0%, #51a2ff 100%);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -100,7 +100,7 @@
     .rank {
         font-size: 1.4em;
         font-weight: 700;
-        color: #1de9d7;
+        color: #51a2ff;
         text-align: center;
         font-variant-numeric: tabular-nums;
     }
@@ -183,7 +183,7 @@
         font-weight: 700;
         font-size: 1.1em;
         font-variant-numeric: tabular-nums;
-        color: #1de9d7;
+        color: #51a2ff;
         text-align: right;
         white-space: nowrap;
     }
@@ -212,7 +212,7 @@
     }
     .stats .label { color: #6a3010; font-weight: 500; margin-right: 4px; }
     .stats .value {
-        color: #1de9d7;
+        color: #51a2ff;
         font-weight: 700;
         font-variant-numeric: tabular-nums;
     }
@@ -254,7 +254,7 @@
         background: #e8eef7;
     }
     .picks-toggle input {
-        accent-color: #1de9d7;
+        accent-color: #51a2ff;
         cursor: pointer;
         margin: 0;
     }

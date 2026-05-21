@@ -153,7 +153,7 @@
         line-height: 1.45;
     }
     .msg.user {
-        background: #1de9d7;
+        background: #51a2ff;
         color: var(--g000);
         margin-left: auto;
         border-bottom-right-radius: 4px;
@@ -209,7 +209,7 @@
     }
     button {
         padding: 10px 18px;
-        background: #1de9d7;
+        background: #51a2ff;
         color: var(--g000);
         border: 0;
         border-radius: 8px;

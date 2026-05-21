@@ -119,5 +119,4 @@
 			{/each}
 		</ul>
 	</div>
-	<span class="copyright">&copy; 2021 - {year} <a href="https://github.com/jake-kelley/ff-league-page">League Page</a></span>
 </footer>

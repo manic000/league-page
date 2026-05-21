@@ -273,7 +273,7 @@
 		padding: 3px 10px;
 		border-radius: 12px;
 		background: linear-gradient(135deg, #11302c 0%, #cfe5fb 100%);
-		color: #1de9d7;
+		color: #51a2ff;
 		font-size: 0.78em;
 		font-weight: 600;
 		font-variant-numeric: tabular-nums;

@@ -6,24 +6,24 @@
 	import { Icon } from '@smui/common';
 
 	// toggle dark mode
-	let darkTheme = $state(typeof window === "undefined" || window.matchMedia("(prefers-color-scheme: dark)").matches);
-	function switchTheme(currentTheme) {
-		currentTheme = !currentTheme;
-		let themeLink = document.head.querySelector("#theme");
-		if (!themeLink) {
-			themeLink = document.createElement("link");
-			themeLink.rel = "stylesheet";
-			themeLink.id = "theme";
-		}
-		themeLink.href = `/smui${currentTheme ? "" : "-dark"}.css`;
-		document.head
-		.querySelector('link[href="/smui-dark.css"]')
-		.insertAdjacentElement("afterend", themeLink);
-	}
+	//let darkTheme = $state(typeof window === "undefined" || window.matchMedia("(prefers-color-scheme: dark)").matches);
+	//function switchTheme(currentTheme) {
+	//	currentTheme = !currentTheme;
+	//	let themeLink = document.head.querySelector("#theme");
+	//	if (!themeLink) {
+	//		themeLink = document.createElement("link");
+	//		themeLink.rel = "stylesheet";
+	//		themeLink.id = "theme";
+	//	}
+	//	themeLink.href = `/smui${currentTheme ? "" : "-dark"}.css`;
+	//	document.head
+	//	.querySelector('link[href="/smui-dark.css"]')
+	//	.insertAdjacentElement("afterend", themeLink);
+	//}
 </script>
 
 <svelte:head>
-	<title>{!page.url.pathname[1] ? 'Home' : page.url.pathname[1].toUpperCase() + page.url.pathname.slice(2)} | League Page</title>
+	<title>{!page.url.pathname[1] ? 'Home' : page.url.pathname[1].toUpperCase() + page.url.pathname.slice(2)} | BCFFL</title>
 </svelte:head>
 
 <style>
@@ -35,8 +35,8 @@
 		background-color: var(--fff);
 		position: relative;
 		z-index: 2;
-		border-bottom: 1px solid #1de9d7;
-		box-shadow: 0 0 8px 0 #1de9d7;
+		border-bottom: 1px solid #51a2ff;
+		box-shadow: 0 0 8px 0 #51a2ff;
 	}
 
 	#logo {
@@ -79,16 +79,16 @@
 	<a href="/"><img id="logo" alt="league logo" src="/badge.png" /></a>
 
 	<div class="container">
-		<IconButton
-			toggle
-			bind:pressed={darkTheme}
-			onclick={() => switchTheme(darkTheme)}
-			class="lightDark"
-			aria-label={darkTheme ? 'Switch to light mode' : 'Switch to dark mode'}
-		>
-			<Icon class="material-icons" on>dark_mode</Icon>
-			<Icon class="material-icons">light_mode</Icon>
-		</IconButton>
+		//<IconButton
+		//	toggle
+		//	bind:pressed={darkTheme}
+		//	onclick={() => switchTheme(darkTheme)}
+		//	class="lightDark"
+		//	aria-label={darkTheme ? 'Switch to light mode' : 'Switch to dark mode'}
+		//>
+		//	<Icon class="material-icons" on>dark_mode</Icon>
+		//	<Icon class="material-icons">light_mode</Icon>
+		//</IconButton>
 	</div>
 
 	<div class="large">

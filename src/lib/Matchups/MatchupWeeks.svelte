@@ -72,7 +72,7 @@
     }
 
     :global(.changeWeek:hover) {
-        color: #1de9d7;
+        color: #51a2ff;
     }
 
     .spacer {

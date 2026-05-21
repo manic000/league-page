@@ -162,7 +162,7 @@
 
     :global(.homeGlow) {
         box-shadow: 0 0 6px 4px #3279cf;
-        background-color: #1de9d7 !important;
+        background-color: #51a2ff !important;
     }
 
     .away {

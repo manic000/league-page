@@ -171,7 +171,7 @@
         letter-spacing: 0.01em;
         border-radius: 10px;
         text-align: center;
-        box-shadow: 0 8px 24px rgba(29, 233, 215, 0.15);
+        box-shadow: 0 8px 24px rgba(81, 162, 255, 0.15);
     }
 
     .panelCard {
@@ -522,7 +522,6 @@
             {@html homepageText }
             <ul class="summaryLinks">
                 <li><a href="/dynasty-knowledge-base?article=constitution">📜 Constitution</a></li>
-                <li><a href="/dynasty-knowledge-base?article=dynasty-101">🎓 Dynasty 101</a></li>
             </ul>
         </div>
     </aside>

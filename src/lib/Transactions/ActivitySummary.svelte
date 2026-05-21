@@ -37,7 +37,7 @@
     .activity h3 {
         margin: 0 0 0.6em;
         font-size: 0.95em;
-        color: #1de9d7;
+        color: #51a2ff;
         font-weight: 600;
     }
     .grid {
@@ -87,7 +87,7 @@
         display: flex;
         gap: 8px;
     }
-    .stats .t { color: #1de9d7; font-weight: 600; }
+    .stats .t { color: #51a2ff; font-weight: 600; }
     .stats .w { color: #43a047; font-weight: 600; }
 
     @media (max-width: 768px) {

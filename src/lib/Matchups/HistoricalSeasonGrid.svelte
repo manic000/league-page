@@ -126,7 +126,7 @@
     h2 {
         margin: 0;
         font-size: 1.2em;
-        color: #1de9d7;
+        color: #51a2ff;
     }
     .meta {
         color: var(--g999);

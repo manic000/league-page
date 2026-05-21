@@ -1,4 +1,3 @@
-import vercel from '@sveltejs/adapter-vercel';
 import node from '@sveltejs/adapter-node';
 
 const dockerBuild = process.env.DOCKER_BUILD

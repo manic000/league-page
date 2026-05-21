@@ -141,12 +141,12 @@
         transform: translateY(-1px);
     }
     .tradeTransaction:hover tbody {
-        box-shadow: 0 4px 12px rgba(29, 233, 215, 0.2);
+        box-shadow: 0 4px 12px rgba(81, 162, 255, 0.2);
     }
     .calc-hint {
         text-align: center;
         font-size: 0.7em;
-        color: #1de9d7;
+        color: #51a2ff;
         font-weight: 600;
         padding: 0.4em 0 0;
         opacity: 0;

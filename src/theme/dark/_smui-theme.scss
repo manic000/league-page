@@ -4,8 +4,8 @@
 
 // SportsBet-style palette: deep navy/teal surface with mint-teal accent.
 @use '@material/theme/index' as theme with (
-  $primary: #1de9d7,
-  $secondary: #10c9b8,
+  $primary: #51a2ff,
+  $secondary: #2b7fff,
   $surface: #0d1c22,
   $background: #0a1419,
   $on-primary: #062420,
@@ -68,20 +68,20 @@
   --fadeTwo: rgba(10, 20, 25, 0.7) 50%;
   --fadeThree: rgba(10, 20, 25, 0.9) 90%;
   --fadeFour: rgba(10, 20, 25, 1) 100%;
-  --blueOne: #1de9d7;
-  --blueTwo: #10c9b8;
+  --blueOne: #51a2ff;
+  --blueTwo: #2b7fff;
   --r1: #11252b;
   --r2: #102228;
   --r3: #10242a;
   --headerPrimary: #11272f;
-  --borderOverride: rgba(29, 233, 215, 0.18);
+  --borderOverride: rgba(81, 162, 255, 0.18);
   --rivalryBack: #122530;
 
   // Accent helpers
-  --accent: #1de9d7;
-  --accentDeep: #10c9b8;
-  --accentSoft: rgba(29, 233, 215, 0.15);
-  --accentBorder: rgba(29, 233, 215, 0.32);
+  --accent: #51a2ff;
+  --accentDeep: #2b7fff;
+  --accentSoft: rgba(81, 162, 255, 0.15);
+  --accentBorder: rgba(81, 162, 255, 0.32);
 
   // Chart bar colors
   --barChartOne: #7fc4f5;
@@ -133,8 +133,8 @@ body {
   color: theme.$on-surface;
   min-height: 100vh;
   background:
-    radial-gradient(1200px 600px at 85% -10%, rgba(29, 233, 215, 0.07), transparent 60%),
-    radial-gradient(900px 500px at -10% 110%, rgba(29, 233, 215, 0.05), transparent 60%),
+    radial-gradient(1200px 600px at 85% -10%, rgba(81, 162, 255, 0.07), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(81, 162, 255, 0.05), transparent 60%),
     linear-gradient(to bottom right, #07121a, #0a1d24);
   background-attachment: fixed;
   color-scheme: dark;
@@ -196,10 +196,10 @@ strong {
 }
 
 a {
-  color: #1de9d7;
+  color: #51a2ff;
 }
 a:visited {
-  color: color.scale(#1de9d7, $lightness: -25%);
+  color: color.scale(#51a2ff, $lightness: -25%);
 }
 
 .mdc-button--outlined:not(:disabled) {

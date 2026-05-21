@@ -38,18 +38,23 @@ export const tabs = [
     //     dest: '/assistant',
     //     key: 'assistant',
     // },
-    {
-        icon: 'article',
-        label: 'Blog',
-        dest: '/blog',
-        key: 'blog',
-    },
+    //{
+    //   icon: 'article',
+    //    label: 'Blog',
+    //    dest: '/blog',
+    //    key: 'blog',
+    //},
     {
         icon: 'view_comfy',
         label: 'League Info',
         nest: true,
         key: 'league_info',
         children: [
+            {
+                icon: 'leaderboard',
+                label: 'Standings',
+                dest: '/standings',
+            },
             {
                 icon: 'storage',
                 label: 'Rosters',
@@ -64,11 +69,6 @@ export const tabs = [
                 icon: 'local_fire_department',
                 label: 'Rivalry',
                 dest: '/rivalry',
-            },
-            {
-                icon: 'leaderboard',
-                label: 'Standings',
-                dest: '/standings',
             },
             {
                 icon: 'view_comfy',
@@ -91,15 +91,15 @@ export const tabs = [
                 dest: '/dynasty-knowledge-base?article=constitution',
             },
             {
-                icon: 'school',
-                label: 'Dynasty 101',
-                dest: '/dynasty-knowledge-base?article=dynasty-101',
-            },
-            {
-                icon: 'menu_book',
-                label: 'Dynasty KB',
-                dest: '/dynasty-knowledge-base',
-            },
+ //               icon: 'school',
+ //               label: 'Dynasty 101',
+ //               dest: '/dynasty-knowledge-base?article=dynasty-101',
+ //           },
+ //           {
+ //               icon: 'menu_book',
+ //               label: 'Dynasty KB',
+ //               dest: '/dynasty-knowledge-base',
+ //           },
             {
                 icon: 'sports_football',
                 label: 'Go to Sleeper',
