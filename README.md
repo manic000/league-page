@@ -1,13 +1,12 @@
 <div align="center">
-  <img alt="MFFGA Dynasty League logo" src="./static/mffga-logo.png?v=2" width="220px" />
 
-**MFFGA — Dynasty League Page**
+**BCFFL League Page**
 
-Custom Sleeper league site for the MFFGA dynasty league, deployed at [mffga.win](https://www.mffga.win).
+Custom Sleeper league site for the Bonecrusher Fantasy Football League.
 
 </div>
 
-> Forked from the [(Unofficial) Sleeper League Page Template](https://github.com/nmelhado/league-page) and extended for dynasty-format use. Original credit to Nicholas Melhado for the base.
+> Forked from [ff-league-page](https://github.com/jake-kelley/ff-league-page) -- Forked from the [(Unofficial) Sleeper League Page Template](https://github.com/nmelhado/league-page) Original credit to Nicholas Melhado for the base and Jake Kelley for his fork.
 
 ---
 
@@ -37,7 +36,6 @@ A full-featured dynasty league site that pulls live data from Sleeper and adds t
 - Constitution, Dynasty 101, KB articles, and the Resources link list are editable live without a redeploy
 - Floating edit button → password prompt → 8-hour session → in-place markdown textarea pre-filled with the current content
 - Resources gets a dedicated GUI: add / remove / reorder rows
-- Persistence via Upstash Redis (Vercel Marketplace KV); falls back to in-memory dev store when env vars are missing
 
 **Polish**
 - Player thumbnails (Sleeper CDN) on roster rows, trade cards, value tables, and trade-calc autocompletes
@@ -47,7 +45,6 @@ A full-featured dynasty league site that pulls live data from Sleeper and adds t
 ## Tech stack
 
 - [SvelteKit](https://svelte.dev/docs/kit) with Svelte 5 runes mode
-- [`@sveltejs/adapter-vercel`](https://kit.svelte.dev/docs/adapter-vercel) — deployed on Vercel
 - [Sleeper API](https://docs.sleeper.app/) — rosters, transactions, drafts, matchups, brackets
 - [FantasyCalc API](https://api.fantasycalc.com/) — dynasty player + pick values, cached for 12h via a Vercel cron-warmed CDN cache
 - [`marked`](https://marked.js.org/) — markdown rendering for KB, Constitution, Dynasty 101
@@ -76,23 +73,3 @@ A full-featured dynasty league site that pulls live data from Sleeper and adds t
 | `VITE_CONTENTFUL_ACCESS_TOKEN` | Optional, for the blog: Contentful management token |
 | `VITE_CONTENTFUL_CLIENT_ACCESS_TOKEN` | Optional, for the blog: Contentful delivery token |
 
-### Cron
-
-`vercel.json` warms the FantasyCalc value cache once a day at 06:00 UTC. The endpoint (`/api/fetch_player_pick_values`) has a 12h CDN cache, so one warm-up keeps values fresh through the day.
-
-### Local dev
-
-```sh
-npm install
-npm run dev
-```
-
-Without Upstash env vars, the editor uses an in-memory store — saves persist for the lifetime of the dev process and aren't visible to other readers.
-
-### Deploy
-
-Pushing to `master` auto-deploys to Vercel. For ad-hoc deploys: `vercel --prod` from the repo root.
-
-## License
-
-MIT — see [LICENSE](./LICENSE).
