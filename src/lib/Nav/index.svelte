@@ -6,20 +6,20 @@
 	import { Icon } from '@smui/common';
 
 	// toggle dark mode
-	//let darkTheme = $state(typeof window === "undefined" || window.matchMedia("(prefers-color-scheme: dark)").matches);
-	//function switchTheme(currentTheme) {
-	//	currentTheme = !currentTheme;
-	//	let themeLink = document.head.querySelector("#theme");
-	//	if (!themeLink) {
-	//		themeLink = document.createElement("link");
-	//		themeLink.rel = "stylesheet";
-	//		themeLink.id = "theme";
-	//	}
-	//	themeLink.href = `/smui${currentTheme ? "" : "-dark"}.css`;
-	//	document.head
-	//	.querySelector('link[href="/smui-dark.css"]')
-	//	.insertAdjacentElement("afterend", themeLink);
-	//}
+	let darkTheme = $state(typeof window === "undefined" || window.matchMedia("(prefers-color-scheme: dark)").matches);
+	function switchTheme(currentTheme) {
+		currentTheme = !currentTheme;
+		let themeLink = document.head.querySelector("#theme");
+		if (!themeLink) {
+			themeLink = document.createElement("link");
+			themeLink.rel = "stylesheet";
+			themeLink.id = "theme";
+		}
+		themeLink.href = `/smui${currentTheme ? "" : "-dark"}.css`;
+		document.head
+		.querySelector('link[href="/smui-dark.css"]')
+		.insertAdjacentElement("afterend", themeLink);
+	}
 </script>
 
 <svelte:head>
@@ -79,16 +79,16 @@
 	<a href="/"><img id="logo" alt="league logo" src="/badge.png" /></a>
 
 	<div class="container">
-		//<IconButton
-		//	toggle
-		//	bind:pressed={darkTheme}
-		//	onclick={() => switchTheme(darkTheme)}
-		//	class="lightDark"
-		//	aria-label={darkTheme ? 'Switch to light mode' : 'Switch to dark mode'}
-		//>
-		//	<Icon class="material-icons" on>dark_mode</Icon>
-		//	<Icon class="material-icons">light_mode</Icon>
-		//</IconButton>
+		<IconButton
+			toggle
+			bind:pressed={darkTheme}
+			onclick={() => switchTheme(darkTheme)}
+			class="lightDark"
+			aria-label={darkTheme ? 'Switch to light mode' : 'Switch to dark mode'}
+		>
+			<Icon class="material-icons" on>dark_mode</Icon>
+			<Icon class="material-icons">light_mode</Icon>
+		</IconButton>
 	</div>
 
 	<div class="large">

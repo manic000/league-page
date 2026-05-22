@@ -90,7 +90,7 @@ export const tabs = [
                 label: 'Constitution',
                 dest: '/dynasty-knowledge-base?article=constitution',
             },
-            {
+ //           {
  //               icon: 'school',
  //               label: 'Dynasty 101',
  //               dest: '/dynasty-knowledge-base?article=dynasty-101',
