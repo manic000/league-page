@@ -56,14 +56,9 @@
         return d.toLocaleString();
     };
 
-    const fmtTrend = (t) => {
-        if (t === null || t === undefined) return '—';
-        const sign = t > 0 ? '+' : '';
-        return `${sign}${t}`;
-    };
-
     const PLAYER_FALLBACK = 'https://sleepercdn.com/images/v2/icons/player_default.webp';
     const isPick = (pos) => pos === 'PICK' || pos === 'RDP';
+    
     const playerThumb = (sleeperId) =>
         sleeperId ? `https://sleepercdn.com/content/nfl/players/thumb/${sleeperId}.jpg` : PLAYER_FALLBACK;
 </script>
@@ -81,6 +76,13 @@
         color: var(--g999);
         font-size: 0.85em;
         margin-bottom: 20px;
+    }
+    .meta a {
+        color: #51a2ff;
+        text-decoration: none;
+    }
+    .meta a:hover {
+        text-decoration: underline;
     }
     .controls {
         display: flex;
@@ -115,7 +117,7 @@
     }
     .pos-chip.active {
         background: #51a2ff;
-        color: var(--g000);
+        color: var(--fff);
         border-color: #51a2ff;
     }
 
@@ -180,7 +182,7 @@
 <div class="wrapper">
     <h2>Player & Pick Values</h2>
     <p class="meta">
-        Dynasty values from <a href="https://fantasycalc.com" target="_blank" rel="noreferrer">FantasyCalc</a> (1QB, 10-team, 1.0 PPR).
+        Dynasty values powered by <a href="https://rosteraudit.com" target="_blank" rel="noreferrer">RosterAudit</a> (1QB format).
         {#if fetchedAt}Last refreshed {fmtDate(fetchedAt)}.{/if}
     </p>
 
@@ -224,7 +226,6 @@
                         <th>Team</th>
                         <th class="num">Age</th>
                         <th class="num">Value</th>
-                        <th class="num">30d Trend</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -250,7 +251,6 @@
                             <td>{p.team || '—'}</td>
                             <td class="num">{p.age ?? '—'}</td>
                             <td class="num">{p.value.toLocaleString()}</td>
-                            <td class="num">{fmtTrend(p.trend30Day)}</td>
                         </tr>
                     {/each}
                 </tbody>
