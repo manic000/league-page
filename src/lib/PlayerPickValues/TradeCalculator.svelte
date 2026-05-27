@@ -81,6 +81,7 @@
             applyUrlTrade(players);
         })
         .catch((err) => { loadError = err.message ?? String(err); });
+
     let queryA = $state('');
     let queryB = $state('');
 
@@ -124,8 +125,10 @@
         const diff = totalA - totalB;
         const max = Math.max(totalA, totalB);
         const pct = max === 0 ? 0 : Math.abs(diff) / max;
+        
         let label;
         let tone;
+        
         if (pct < FAIR_THRESHOLD) {
             label = 'Even trade';
             tone = 'fair';
@@ -158,8 +161,10 @@
 
     const PLAYER_FALLBACK = 'https://sleepercdn.com/images/v2/icons/player_default.webp';
     const isPick = (pos) => pos === 'PICK' || pos === 'RDP';
+    
     const playerThumb = (sleeperId) =>
         sleeperId ? `https://sleepercdn.com/content/nfl/players/thumb/${sleeperId}.jpg` : PLAYER_FALLBACK;
+
     const onThumbError = (e) => { e.currentTarget.onerror = null; e.currentTarget.src = PLAYER_FALLBACK; };
 
     const lighterSide = $derived.by(() => {
@@ -167,6 +172,7 @@
         if (totalA === totalB) return null;
         return totalA < totalB ? 'A' : 'B';
     });
+
     const gap = $derived(Math.abs(totalA - totalB));
     const heavierTotal = $derived(Math.max(totalA, totalB));
 
@@ -267,6 +273,14 @@
         color: var(--g999);
         font-size: 0.9em;
         margin-bottom: 24px;
+        line-height: 1.4;
+    }
+    .meta a {
+        color: #51a2ff;
+        text-decoration: none;
+    }
+    .meta a:hover {
+        text-decoration: underline;
     }
     .calc {
         padding: 24px;
@@ -515,13 +529,25 @@
         font-size: 0.8em;
         white-space: nowrap;
     }
+    .powered-by {
+        text-align: center;
+        margin-top: 24px;
+        font-size: 0.85em;
+        color: var(--g555);
+    }
+    .powered-by a {
+        color: inherit;
+        text-decoration: underline;
+        font-weight: 500;
+    }
 </style>
 
 <div class="wrapper">
     <h2>Trade Calculator</h2>
     <p class="meta">
-        Type a name to autocomplete. Add as many players or picks as you want on each side.
-        Values from <a href="https://fantasycalc.com" target="_blank" rel="noreferrer">FantasyCalc</a> (1QB, 10-team, 1.0 PPR dynasty). This calculator only calculates CURRENT value of trade assets, not to be used for old trades where player values have drastically changed. It also does not account for any "overpay" necessary to acquire a young stud (e.g. Ja'Marr Chase typically requiring a ~20% overpay to sell for non-stud picks/players — five quarters for a dollar).
+        Type a name to autocomplete. Add as many players or picks as you want on each side.<br/>
+        Values powered by <a href="https://rosteraudit.com" target="_blank" rel="noreferrer">RosterAudit</a> (1QB dynasty). 
+        These market values are derived from thousands of real Sleeper trades via an Elo engine, meaning simple addition gives you an accurate picture of fairness.
     </p>
 
     {#if loadError}
@@ -748,6 +774,10 @@
                     <button onclick={reset}>Clear trade</button>
                 </div>
             {/if}
+
+            <div class="powered-by">
+                <a href="https://rosteraudit.com" target="_blank" rel="noreferrer">Values by RosterAudit.com</a>
+            </div>
         </section>
     {/if}
 </div>
