@@ -114,9 +114,9 @@
         color: inherit;
     }
     .pos-chip.active {
-        background: #51a2ff;
+        background: #1de9d7;
         color: var(--g000);
-        border-color: #51a2ff;
+        border-color: #1de9d7;
     }
 
     table {
@@ -148,7 +148,7 @@
         font-size: 0.75em;
         font-weight: 600;
         background: #e8eef7;
-        color: #51a2ff;
+        color: #1de9d7;
     }
     .player-cell {
         display: flex;
