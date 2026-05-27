@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
 
-const FANTASY_CALC_URL = 'https://api.fantasycalc.com/values/current?isDynasty=true&numQbs=1&numTeams=10&ppr=1';
+const FANTASY_CALC_URL = 'https://api.fantasycalc.com/values/current?isDynasty=false&numQbs=1&numTeams=10&ppr=0.5';
 
 // 12h CDN cache: upstream (FantasyCalc) is hit at most twice per day.
 // A vercel.json cron pings this endpoint at 06:00 and 18:00 UTC to keep the cache warm,
