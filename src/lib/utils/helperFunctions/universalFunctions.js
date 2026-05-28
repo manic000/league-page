@@ -203,7 +203,7 @@ export const getTeamData = (users, ownerID) => {
         name: 'Unknown Team',
     }
 }
-*
+
 export const getAvatarFromTeamManagers = (teamManagers, rosterID, year) => {
     if(!year || year > teamManagers.currentSeason) {
         year = teamManagers.currentSeason;
