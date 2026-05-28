@@ -501,6 +501,10 @@
                     {/await}
                 </div>
             </div>
+            <div class="panelCard">
+                <h6 class="panelHeading">Recent Activity</h6>
+                <Transactions />
+            </div>
 
             <PowerRankings />
 
