@@ -1,4 +1,3 @@
-<!-- __layout.svelte -->
 <script>
 	import { Nav, Footer } from "$lib/components"
     import { dev } from '$app/environment';

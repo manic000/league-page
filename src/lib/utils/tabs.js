@@ -14,37 +14,6 @@ export const tabs = [
         key: 'matchups',
     },
     {
-        icon: 'swap_horiz',
-        label: 'Trades & Waivers',
-        dest: '/transactions',
-        key: 'transactions',
-    },
-    {
-        icon: 'trending_up',
-        label: 'Player & Pick Values',
-        dest: '/player-pick-values',
-        key: 'player_pick_values',
-    },
-    {
-        icon: 'calculate',
-        label: 'Trade Calculator',
-        dest: '/trade-calculator',
-        key: 'trade_calculator',
-    },
-    // Stashed — re-enable when the assistant is reliable.
-    // {
-    //     icon: 'forum',
-    //     label: 'Assistant',
-    //     dest: '/assistant',
-    //     key: 'assistant',
-    // },
-    //{
-    //   icon: 'article',
-    //    label: 'Blog',
-    //    dest: '/blog',
-    //    key: 'blog',
-    //},
-    {
         icon: 'view_comfy',
         label: 'League Info',
         nest: true,
@@ -56,15 +25,48 @@ export const tabs = [
                 dest: '/standings',
             },
             {
+                icon: 'swap_horiz',
+                label: 'Trades & Waivers',
+                dest: '/transactions',
+            },
+            {
+                icon: 'calculate',
+                label: 'Trade Calculator',
+                dest: '/trade-calculator',
+            },
+            {
                 icon: 'storage',
                 label: 'Rosters',
                 dest: '/rosters',
+            },
+            {
+                icon: 'trending_up',
+                label: 'Player & Pick Values',
+                dest: '/player-pick-values',
             },
             {
                 icon: 'groups',
                 label: 'Managers',
                 dest: '/managers',
             },
+            {
+                icon: 'history_edu',
+                label: 'Constitution',
+                dest: '/dynasty-knowledge-base?article=constitution',
+            },
+            {
+                icon: 'sports_football',
+                label: 'Go to Sleeper',
+                dest: `https://sleeper.com/leagues/${leagueID}`,
+            },
+        ]
+    },
+    {
+        icon: 'view_comfy',
+        label: 'History & Award',
+        nest: true,
+        key: 'history_awards',
+        children: [
             {
                 icon: 'local_fire_department',
                 label: 'Rivalry',
@@ -85,31 +87,11 @@ export const tabs = [
                 label: 'Records',
                 dest: '/records',
             },
-            {
-                icon: 'history_edu',
-                label: 'Constitution',
-                dest: '/dynasty-knowledge-base?article=constitution',
-            },
- //           {
- //               icon: 'school',
- //               label: 'Dynasty 101',
- //               dest: '/dynasty-knowledge-base?article=dynasty-101',
- //           },
- //           {
- //               icon: 'menu_book',
- //               label: 'Dynasty KB',
- //               dest: '/dynasty-knowledge-base',
- //           },
-            {
-                icon: 'sports_football',
-                label: 'Go to Sleeper',
-                dest: `https://sleeper.com/leagues/${leagueID}`,
-            },
         ]
     },
     {
         icon: 'lightbulb',
-        label: 'Resources & News',
+        label: 'Resources',
         dest: '/resources',
         key: 'resources',
     },

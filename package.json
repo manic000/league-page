@@ -7,28 +7,10 @@
     "url": "git://github.com/manic000/league-page.git"
   },
   "author": {
-    "name": "Jake Kelley",
-    "email": "jkel229@wgu.edu",
-    "url": "https://github.com/jake-kelley"
+    "name": "manic000",
+    "email": "manic00@no.mail",
+    "url": "https://github.com/manic000"
   },
-  "contributors": [
-    {
-      "name": "Shane Tjong-Akiet",
-      "url": "https://github.com/shanetj"
-    },
-    {
-      "name": "Scottie Garcia",
-      "url": "https://github.com/scottiegarcia"
-    },
-    {
-      "name": "DOLO",
-      "url": "https://github.com/1600dolo"
-    },
-    {
-      "name": "OldNewsBlues-2",
-      "url": "https://github.com/OldNewsBlues-2"
-    }
-  ],
   "bugs": {
     "url": "https://github.com/manic000/league-page/issues"
   },
