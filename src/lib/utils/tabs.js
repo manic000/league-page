@@ -50,24 +50,6 @@ export const tabs = [
                 dest: '/managers',
             },
             {
-                icon: 'history_edu',
-                label: 'Constitution',
-                dest: '/dynasty-knowledge-base?article=constitution',
-            },
-            {
-                icon: 'sports_football',
-                label: 'Go to Sleeper',
-                dest: `https://sleeper.com/leagues/${leagueID}`,
-            },
-        ]
-    },
-    {
-        icon: 'view_comfy',
-        label: 'History & Award',
-        nest: true,
-        key: 'history_awards',
-        children: [
-            {
                 icon: 'local_fire_department',
                 label: 'Rivalry',
                 dest: '/rivalry',
@@ -86,6 +68,16 @@ export const tabs = [
                 icon: 'military_tech',
                 label: 'Records',
                 dest: '/records',
+            },
+            {
+                icon: 'history_edu',
+                label: 'Constitution',
+                dest: '/dynasty-knowledge-base?article=constitution',
+            },
+            {
+                icon: 'sports_football',
+                label: 'Go to Sleeper',
+                dest: `https://sleeper.com/leagues/${leagueID}`,
             },
         ]
     },
