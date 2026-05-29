@@ -1,16 +1,15 @@
-import { getLeagueRosters, getLeagueTeamManagers, loadPlayers } from '$lib/utils/helper';
+import { getLeagueRosters, loadPlayers, managers } from '$lib/utils/helper';
 
 export async function load() {
-    // Fetch all required league data concurrently
-    const [rostersData, managersData, playersData] = await Promise.all([
+    // Fetch rosters and players concurrently
+    const [rostersData, playersData] = await Promise.all([
         getLeagueRosters(),
-        getLeagueTeamManagers(),
         loadPlayers()
     ]);
     
     return {
         rosters: rostersData.rosters || rostersData,
-        managers: managersData.managers || managersData,
+        managers: managers, // We pull this directly from your pre-configured leagueInfo array
         players: playersData
     };
 }
