@@ -35,6 +35,11 @@ export const tabs = [
                 dest: '/trade-calculator',
             },
             {
+                icon: 'calculate',
+                label: 'RA Trade Calculator',
+                dest: '/ra-trade-calculator',
+            },
+            {
                 icon: 'storage',
                 label: 'Rosters',
                 dest: '/rosters',
