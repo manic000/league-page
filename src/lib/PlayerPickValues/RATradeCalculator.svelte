@@ -1,7 +1,8 @@
 <script>
     import LinearProgress from '@smui/linear-progress';
 
-    let { managers = [], rosters = [], players = {} } = $props();
+    // Accept users instead of managers
+    let { users = [], rosters = [], players = {} } = $props();
 
     // UI State
     let selectedTeamA = $state('');
@@ -17,9 +18,23 @@
     let evalError = $state(null);
     let isModified = $state(false);
 
-    // Track modifications to re-enable the button
+    // Cross-reference Rosters with live Sleeper Users to generate dropdown labels
+    const leagueTeams = $derived.by(() => {
+        return rosters.map(roster => {
+            const user = users.find(u => String(u.user_id) === String(roster.owner_id));
+            let name = `Team ${roster.roster_id}`; // Fallback if no user is assigned
+            
+            if (user) {
+                // Prefer their custom team name, fallback to their Sleeper username
+                name = user.metadata?.team_name || user.display_name || name;
+            }
+            
+            return { rosterId: roster.roster_id, name };
+        }).sort((a, b) => a.rosterId - b.rosterId); // Sort numerically by roster ID
+    });
+
+    // Track modifications to re-enable the evaluate button
     $effect(() => {
-        // Just referencing these variables registers them as dependencies for the effect
         const a = checkedA;
         const b = checkedB;
         const ta = selectedTeamA;
@@ -30,7 +45,6 @@
         }
     });
 
-    // Helper to extract a structured roster list for a selected roster ID
     const getRosterList = (rosterId) => {
         if (!rosterId) return [];
         const roster = rosters.find(r => String(r.roster_id) === String(rosterId));
@@ -46,7 +60,7 @@
             };
         });
 
-        // Generate standard draft picks for the team since Sleeper pick parsing is complex
+        // Generate standard draft picks for the team
         const currentYear = new Date().getFullYear();
         const picks = [];
         for (let y = currentYear; y <= currentYear + 2; y++) {
@@ -147,7 +161,6 @@
     .results-panel h3 { margin-top: 0; color: #333; }
     .error { color: #d32f2f; background: #f8d7da; padding: 12px; border-radius: 6px; }
     
-    /* Fallback display for dynamic JSON formatting */
     pre.json-dump { background: #222; color: #0f0; padding: 14px; border-radius: 6px; overflow-x: auto; font-size: 0.9em; }
 </style>
 
@@ -164,8 +177,8 @@
                 <h4>Side A</h4>
                 <select bind:value={selectedTeamA} onchange={() => checkedA = []}>
                     <option value="" disabled>Select Team...</option>
-                    {#each managers as m}
-                        <option value={m.roster}>Team {m.name}</option>
+                    {#each leagueTeams as t}
+                        <option value={t.rosterId}>{t.name}</option>
                     {/each}
                 </select>
 
@@ -198,8 +211,8 @@
                 <h4>Side B</h4>
                 <select bind:value={selectedTeamB} onchange={() => checkedB = []}>
                     <option value="" disabled>Select Team...</option>
-                    {#each managers as m}
-                        <option value={m.roster}>Team {m.name}</option>
+                    {#each leagueTeams as t}
+                        <option value={t.rosterId}>{t.name}</option>
                     {/each}
                 </select>
 
@@ -253,7 +266,6 @@
         {#if evalResult && !evalError}
             <div class="results-panel" style={isModified ? 'opacity: 0.5; transition: opacity 0.3s;' : ''}>
                 <h3>RosterAudit Evaluation</h3>
-                
                 <p style="font-size: 0.9em; margin-bottom: 10px;">
                     {#if isModified}
                         <em>Trade modified. Click evaluate to update results.</em>
