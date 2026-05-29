@@ -1,8 +1,8 @@
 /*   STEP 1   */
-export const leagueID = "1341269768140783616"; // your league ID
-export const leagueName = "Bonecrusher Fantasy Football League"; // your league name
-export const dues = 25; // (optional) used in template constitution page
-export const dynasty = false; // true for dynasty leagues, false for redraft and keeper
+export const leagueID = "1362614806116302848"; // your league ID
+export const leagueName = "2026 Dynasty"; // your league name
+export const dues = 0; // (optional) used in template constitution page
+export const dynasty = true; // true for dynasty leagues, false for redraft and keeper
 export const enableBlog = false; // requires VITE_CONTENTFUL_ACCESS_TOKEN and VITE_CONTENTFUL_SPACE environment variables
 
 

@@ -11,6 +11,6 @@ services:
       - .env
     environment:
       - NODE_ENV=production
-
+      - ROSTER_AUDIT_API_KEY=${ROSTER_AUDIT_API_KEY}
 
 
