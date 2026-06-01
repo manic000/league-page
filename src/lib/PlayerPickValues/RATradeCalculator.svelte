@@ -20,13 +20,17 @@
 
     // Cross-reference Rosters with live Sleeper Users to generate dropdown labels
     const leagueTeams = $derived.by(() => {
+        if (!Array.isArray(rosters)) return [];
+        
         return rosters.map(roster => {
-            const user = users.find(u => String(u.user_id) === String(roster.owner_id));
             let name = `Team ${roster.roster_id}`; // Fallback if no user is assigned
             
-            if (user) {
-                // Prefer their custom team name, fallback to their Sleeper username
-                name = user.metadata?.team_name || user.display_name || name;
+            if (Array.isArray(users)) {
+                const user = users.find(u => String(u.user_id) === String(roster.owner_id));
+                if (user) {
+                    // Prefer their custom team name, fallback to their Sleeper username
+                    name = user.metadata?.team_name || user.display_name || name;
+                }
             }
             
             return { rosterId: roster.roster_id, name };
@@ -46,9 +50,9 @@
     });
 
     const getRosterList = (rosterId) => {
-        if (!rosterId) return [];
+        if (!rosterId || !Array.isArray(rosters)) return [];
         const roster = rosters.find(r => String(r.roster_id) === String(rosterId));
-        if (!roster || !roster.players) return [];
+        if (!roster || !Array.isArray(roster.players)) return [];
 
         let rosterPlayers = roster.players.map(sleeperId => {
             const pInfo = players[sleeperId];

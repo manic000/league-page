@@ -1,4 +1,5 @@
-import { getLeagueRosters, loadPlayers, leagueID } from '$lib/utils/helper';
+import { getLeagueRosters, loadPlayers } from '$lib/utils/helper';
+import { leagueID } from '$lib/utils/leagueInfo';
 
 export async function load({ fetch }) {
     // Fetch rosters, players, and live Sleeper user profiles concurrently
@@ -8,7 +9,10 @@ export async function load({ fetch }) {
         fetch(`https://api.sleeper.app/v1/league/${leagueID}/users`)
     ]);
 
-    const users = usersRes.ok ? await usersRes.json() : [];
+    const usersData = usersRes.ok ? await usersRes.json() : [];
+    
+    // Defensively ensure users is an array so it never crashes the UI
+    const users = Array.isArray(usersData) ? usersData : [];
 
     return {
         rosters: rostersData.rosters || rostersData,
