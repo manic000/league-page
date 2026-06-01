@@ -1,22 +1,16 @@
-import { getLeagueRosters, loadPlayers } from '$lib/utils/helper';
-import { leagueID } from '$lib/utils/leagueInfo';
+import { getLeagueRosters, getLeagueTeamManagers, loadPlayers } from '$lib/utils/helper';
 
-export async function load({ fetch }) {
-    // Fetch rosters, players, and live Sleeper user profiles concurrently
-    const [rostersData, playersData, usersRes] = await Promise.all([
+export async function load() {
+    // Leverage the exact data orchestration used by working pages like Matchups
+    const [rostersData, teamManagersData, playersData] = await Promise.all([
         getLeagueRosters(),
-        loadPlayers(),
-        fetch(`https://api.sleeper.app/v1/league/${leagueID}/users`)
+        getLeagueTeamManagers(),
+        loadPlayers()
     ]);
 
-    const usersData = usersRes.ok ? await usersRes.json() : [];
-    
-    // Defensively ensure users is an array so it never crashes the UI
-    const users = Array.isArray(usersData) ? usersData : [];
-
     return {
-        rosters: rostersData.rosters || rostersData,
-        users: users, 
+        rostersData,
+        teamManagersData,
         players: playersData
     };
 }

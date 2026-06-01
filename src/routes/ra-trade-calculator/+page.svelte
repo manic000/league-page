@@ -8,7 +8,7 @@
 </svelte:head>
 
 <RATradeCalculator 
-    users={data.users} 
-    rosters={data.rosters} 
+    teamManagersData={data.teamManagersData} 
+    rostersData={data.rostersData} 
     players={data.players} 
 />

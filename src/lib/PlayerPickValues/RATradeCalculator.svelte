@@ -1,8 +1,7 @@
 <script>
     import LinearProgress from '@smui/linear-progress';
 
-    // Accept users instead of managers
-    let { users = [], rosters = [], players = {} } = $props();
+    let { teamManagersData, rostersData, players = {} } = $props();
 
     // UI State
     let selectedTeamA = $state('');
@@ -18,23 +17,18 @@
     let evalError = $state(null);
     let isModified = $state(false);
 
-    // Cross-reference Rosters with live Sleeper Users to generate dropdown labels
+    // Defensively map team managers data to populate the dropdowns safely
     const leagueTeams = $derived.by(() => {
-        if (!Array.isArray(rosters)) return [];
+        const managers = teamManagersData?.managers || (Array.isArray(teamManagersData) ? teamManagersData : []);
         
-        return rosters.map(roster => {
-            let name = `Team ${roster.roster_id}`; // Fallback if no user is assigned
+        return managers.map(m => {
+            // Defend against varying template casing versions of roster IDs
+            const rosterId = m.rosterID || m.rosterId || m.roster_id;
+            // Defend against varying template naming properties for team designations
+            const name = m.teamName || m.name || m.managerName || `Team ${rosterId}`;
             
-            if (Array.isArray(users)) {
-                const user = users.find(u => String(u.user_id) === String(roster.owner_id));
-                if (user) {
-                    // Prefer their custom team name, fallback to their Sleeper username
-                    name = user.metadata?.team_name || user.display_name || name;
-                }
-            }
-            
-            return { rosterId: roster.roster_id, name };
-        }).sort((a, b) => a.rosterId - b.rosterId); // Sort numerically by roster ID
+            return { rosterId, name };
+        }).sort((a, b) => a.rosterId - b.rosterId);
     });
 
     // Track modifications to re-enable the evaluate button
@@ -49,9 +43,12 @@
         }
     });
 
+    // Safe lookup helper for parsing players and generating pick objects
     const getRosterList = (rosterId) => {
-        if (!rosterId || !Array.isArray(rosters)) return [];
-        const roster = rosters.find(r => String(r.roster_id) === String(rosterId));
+        if (!rosterId) return [];
+        
+        const rostersArray = rostersData?.rosters || (Array.isArray(rostersData) ? rostersData : []);
+        const roster = rostersArray.find(r => String(r.roster_id || r.rosterID || r.rosterId) === String(rosterId));
         if (!roster || !Array.isArray(roster.players)) return [];
 
         let rosterPlayers = roster.players.map(sleeperId => {
@@ -64,7 +61,7 @@
             };
         });
 
-        // Generate standard draft picks for the team
+        // Generate standard draft picks for the selected team
         const currentYear = new Date().getFullYear();
         const picks = [];
         for (let y = currentYear; y <= currentYear + 2; y++) {
@@ -177,6 +174,7 @@
 
     <div class="calc-container">
         <div class="sides">
+            <!-- SIDE A -->
             <div class="side">
                 <h4>Side A</h4>
                 <select bind:value={selectedTeamA} onchange={() => checkedA = []}>
@@ -211,6 +209,7 @@
                 </div>
             </div>
 
+            <!-- SIDE B -->
             <div class="side">
                 <h4>Side B</h4>
                 <select bind:value={selectedTeamB} onchange={() => checkedB = []}>
