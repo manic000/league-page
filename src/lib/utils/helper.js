@@ -18,6 +18,7 @@ import { getBrackets } from './helperFunctions/leagueBrackets';
 import { getBlogPosts, generateParagraph } from './helperFunctions/getBlogPosts';
 import { getLeagueStandings } from './helperFunctions/leagueStandings';
 import { getPlayerPickValues } from './helperFunctions/playerPickValues';
+import { getRaPickValues } from './helperFunctions/raPickValues';
 
 export {
     enableBlog,
@@ -56,4 +57,5 @@ export {
     getAvatar,
     getTeamFromTeamManagers,
     getPlayerPickValues,
+    getRaPickValues,
 }
