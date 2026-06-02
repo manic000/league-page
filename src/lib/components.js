@@ -20,7 +20,6 @@ import Posts from './BlogPosts/Posts.svelte';
 import Standings from './Standings/index.svelte';
 import PlayerPickValues from './PlayerPickValues/PlayerPickValues.svelte';
 import TradeCalculator from './PlayerPickValues/TradeCalculator.svelte';
-import RATradeCalculator from './PlayerPickValues/RATradeCalculator.svelte';
 
 export {
     Nav,
@@ -45,5 +44,4 @@ export {
     Standings,
     PlayerPickValues,
     TradeCalculator,
-    RATradeCalculator,
 };
