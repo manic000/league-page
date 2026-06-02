@@ -15,6 +15,34 @@ export const tabs = [
     },
     {
         icon: 'view_comfy',
+        label: 'Team',
+        nest: true,
+        key: 'team_info',
+        children: [
+            {
+                icon: 'storage',
+                label: 'Rosters',
+                dest: '/rosters',
+            },
+            {
+                icon: 'calculate',
+                label: 'Trade Calculator',
+                dest: '/trade-calculator',
+            },
+            {
+                icon: 'local_fire_department',
+                label: 'Rivalry',
+                dest: '/rivalry',
+            },
+            {
+                icon: 'groups',
+                label: 'Managers',
+                dest: '/managers',
+            },
+        ]
+    },
+    {
+        icon: 'view_comfy',
         label: 'League Info',
         nest: true,
         key: 'league_info',
@@ -30,29 +58,9 @@ export const tabs = [
                 dest: '/transactions',
             },
             {
-                icon: 'calculate',
-                label: 'Trade Calculator',
-                dest: '/trade-calculator',
-            },
-            {
-                icon: 'storage',
-                label: 'Rosters',
-                dest: '/rosters',
-            },
-            {
                 icon: 'trending_up',
                 label: 'Player & Pick Values',
                 dest: '/player-pick-values',
-            },
-            {
-                icon: 'groups',
-                label: 'Managers',
-                dest: '/managers',
-            },
-            {
-                icon: 'local_fire_department',
-                label: 'Rivalry',
-                dest: '/rivalry',
             },
             {
                 icon: 'view_comfy',
