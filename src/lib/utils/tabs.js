@@ -15,42 +15,19 @@ export const tabs = [
     },
     {
         icon: 'view_comfy',
-        label: 'Team',
-        nest: true,
-        key: 'team_info',
-        children: [
-            {
-                icon: 'storage',
-                label: 'Rosters',
-                dest: '/rosters',
-            },
-            {
-                icon: 'calculate',
-                label: 'Trade Calculator',
-                dest: '/trade-calculator',
-            },
-            {
-                icon: 'local_fire_department',
-                label: 'Rivalry',
-                dest: '/rivalry',
-            },
-            {
-                icon: 'groups',
-                label: 'Managers',
-                dest: '/managers',
-            },
-        ]
-    },
-    {
-        icon: 'view_comfy',
         label: 'League Info',
         nest: true,
         key: 'league_info',
         children: [
-            {
+           {
                 icon: 'leaderboard',
                 label: 'Standings',
                 dest: '/standings',
+            },
+            {
+                icon: 'storage',
+                label: 'Rosters',
+                dest: '/rosters',
             },
             {
                 icon: 'swap_horiz',
@@ -58,9 +35,24 @@ export const tabs = [
                 dest: '/transactions',
             },
             {
+                icon: 'calculate',
+                label: 'Trade Calculator',
+                dest: '/trade-calculator',
+            },
+            {
                 icon: 'trending_up',
                 label: 'Player & Pick Values',
                 dest: '/player-pick-values',
+            },
+            {
+                icon: 'groups',
+                label: 'Managers',
+                dest: '/managers',
+            },
+            {
+                icon: 'local_fire_department',
+                label: 'Rivalry',
+                dest: '/rivalry',
             },
             {
                 icon: 'view_comfy',
@@ -82,17 +74,16 @@ export const tabs = [
                 label: 'Constitution',
                 dest: '/dynasty-knowledge-base?article=constitution',
             },
-            {
-                icon: 'sports_football',
-                label: 'Go to Sleeper',
-                dest: `https://sleeper.com/leagues/${leagueID}`,
-            },
+	{
+	    icon: 'lightbulb',
+	    label: 'Resources',
+	    dest: '/resources',
+	 },
         ]
-    },
-    {
-        icon: 'lightbulb',
-        label: 'Resources',
-        dest: '/resources',
-        key: 'resources',
+       },
+     {
+            icon: 'sports_football',
+            label: 'Go to Sleeper',
+            dest: `https://sleeper.com/leagues/${leagueID}`,
     },
 ];
