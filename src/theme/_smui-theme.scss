@@ -4,10 +4,10 @@
 
 // SportsBet-style palette: deep navy/teal surface with mint-teal accent.
 @use '@material/theme/index' as theme with (
-  $primary: #51a2ff,
-  $secondary: #2b7fff,
-  $surface: #0d1c22,
-  $background: #0a1419,
+  $primary: #0354b6,
+  $secondary: #0354b6af,
+  $surface: #063d81,
+  $background: #080808,
   $on-primary: #062420,
   $on-secondary: #062420,
   $on-surface: #ffffff,
@@ -36,7 +36,7 @@
 @use '@material/typography/index' as typography;
 
 :root {
-  --fff: #0d1c22;
+  --fff: #063d81;
   --fffTransparent: rgba(13, 28, 34, 0);
   --f8f8f8: #0f2129;
   --f3f3f3: #122530;
