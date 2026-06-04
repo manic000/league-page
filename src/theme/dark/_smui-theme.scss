@@ -4,10 +4,10 @@
 
 // SportsBet-style palette: deep navy/teal surface with mint-teal accent.
 @use '@material/theme/index' as theme with (
-  $primary: #51a2ff,
-  $secondary: #2b7fff,
-  $surface: #0d1c22,
-  $background: #0a1419,
+  $primary: #0354b6,
+  $secondary: #063d81,
+  $surface: #0d1b2a,
+  $background: #080808,
   $on-primary: #062420,
   $on-secondary: #062420,
   $on-surface: #ffffff,
@@ -36,7 +36,7 @@
 @use '@material/typography/index' as typography;
 
 :root {
-  --fff: #0d1c22;
+  --fff: #063d81;
   --fffTransparent: rgba(13, 28, 34, 0);
   --f8f8f8: #0f2129;
   --f3f3f3: #122530;
@@ -68,8 +68,8 @@
   --fadeTwo: rgba(10, 20, 25, 0.7) 50%;
   --fadeThree: rgba(10, 20, 25, 0.9) 90%;
   --fadeFour: rgba(10, 20, 25, 1) 100%;
-  --blueOne: #51a2ff;
-  --blueTwo: #2b7fff;
+  --blueOne: #0354b6;
+  --blueTwo: #063d81;
   --r1: #11252b;
   --r2: #102228;
   --r3: #10242a;
@@ -78,8 +78,8 @@
   --rivalryBack: #122530;
 
   // Accent helpers
-  --accent: #51a2ff;
-  --accentDeep: #2b7fff;
+  --accent: #0354b6;
+  --accentDeep: #063d81;
   --accentSoft: rgba(81, 162, 255, 0.15);
   --accentBorder: rgba(81, 162, 255, 0.32);
 
@@ -118,7 +118,7 @@
   --TE: #ffae58;
   --K: #bd66ff;
   --Budget: #7947d4;
-  --DEF: #fff67a;
+  --DEF: #eee45e;
   --DL: #ff795a;
   --LB: #6d7df5;
   --DB: #ff7cb6;
@@ -129,14 +129,14 @@ html,
 body {
   position: relative;
   margin: 0;
-  background-color: theme.$background;
+  background-color: #080808;
   color: theme.$on-surface;
   min-height: 100vh;
-  background:
-    radial-gradient(1200px 600px at 85% -10%, rgba(81, 162, 255, 0.07), transparent 60%),
-    radial-gradient(900px 500px at -10% 110%, rgba(81, 162, 255, 0.05), transparent 60%),
-    linear-gradient(to bottom right, #07121a, #0a1d24);
-  background-attachment: fixed;
+//  background:
+//    radial-gradient(1200px 600px at 85% -10%, rgba(81, 162, 255, 0.07), transparent 60%),
+//    radial-gradient(900px 500px at -10% 110%, rgba(81, 162, 255, 0.05), transparent 60%),
+//    linear-gradient(to bottom right, #07121a, #0a1d24);
+//  background-attachment: fixed;
   color-scheme: dark;
 }
 
