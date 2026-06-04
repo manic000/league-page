@@ -98,7 +98,7 @@
     }
 
     .summaryCard {
-        background: var(--f8f8f8);
+        background: #063d8126;
         border: 1px solid var(--accentBorder);
         border-radius: 12px;
         padding: 20px 22px;
@@ -107,7 +107,7 @@
 
     .summaryCard h6 {
         margin: 0 0 14px;
-        color: var(--accent);
+        color: #ffd700;
         text-align: left;
         font-size: 0.95em;
         letter-spacing: 0.08em;

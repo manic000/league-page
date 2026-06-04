@@ -7,7 +7,7 @@
   $primary: #0354b6,
   $secondary: #063d81,
   $surface: #0d1b2a,
-  $background: #080808,
+  $background: #000000,
   $on-primary: #062420,
   $on-secondary: #062420,
   $on-surface: #ffffff,
@@ -36,7 +36,7 @@
 @use '@material/typography/index' as typography;
 
 :root {
-  --fff: #063d81;
+  --fff: #063d8140;
   --fffTransparent: rgba(13, 28, 34, 0);
   --f8f8f8: #0f2129;
   --f3f3f3: #122530;
@@ -129,7 +129,7 @@ html,
 body {
   position: relative;
   margin: 0;
-  background-color: #080808;
+  background-color: #000000
   color: theme.$on-surface;
   min-height: 100vh;
 //  background:
