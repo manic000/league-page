@@ -506,9 +506,9 @@
                 <h6 class="panelHeading">Recent Activity</h6>
                 <Transactions />
             </div>
-
+<div class="panelCard">
             <PowerRankings />
-
+</div>
             {#if enableBlog}
                 <HomePost />
             {/if}
