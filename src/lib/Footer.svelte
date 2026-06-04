@@ -44,7 +44,7 @@
 
 <style>
 	footer {
-		background-color: var(--f8f8f8);
+		background-color: #000000;
 		width: 100%;
         display: block;
         position: absolute;

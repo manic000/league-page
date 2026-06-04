@@ -163,19 +163,20 @@
     }
 
     .homeBanner {
-        background-color: var(--blueOne);
-        color: #062420;
+        background-color: #063d8126;
+        color: #ffd700;
+        border: 1px solid var(--ebebeb);
         padding: 0.65em 0;
         font-weight: 600;
         font-size: 1.25em;
         letter-spacing: 0.01em;
-        border-radius: 10px;
+        border-radius: 12px;
         text-align: center;
-        box-shadow: 0 8px 24px rgba(81, 162, 255, 0.15);
+        box-shadow: 0 4px 12px rgba(81, 162, 255, 0.15);
     }
 
     .panelCard {
-        background: var(--f8f8f8);
+        background: #063d8126;
         border: 1px solid var(--ebebeb);
         border-radius: 12px;
         padding: 24px 26px;

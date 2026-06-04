@@ -32,11 +32,11 @@
     	margin: 0 auto;
 	}
 	nav {
-		background-color: var(--fff);
+		background-color: #000000;
 		position: relative;
 		z-index: 2;
-		border-bottom: 1px solid #51a2ff;
-		box-shadow: 0 0 8px 0 #51a2ff;
+		border-bottom: 1px solid #063d81;
+		box-shadow: 0 0 8px 0 #063d81;
 	}
 
 	#logo {
