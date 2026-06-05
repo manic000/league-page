@@ -97,7 +97,12 @@
         display: block;
         position: relative;
         width: 100%;
-    }
+border-radius:0 0 0 40px;
+border:1px solid var(--ddd);
+border-left:2px solid var(--blueTwo);
+border-bottom:none;
+background-color:var(--fff)}
+}
 </style>
 
 {#if validGraph && !seasonOver}
