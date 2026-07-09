@@ -1,4 +1,4 @@
-# Bonecrusher Fantasy Football League Constitution
+# Pigskin Empire Fantasy Football League Constitution
 
 *A living document — major changes are ratified before each new season.*
 

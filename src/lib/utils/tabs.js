@@ -69,11 +69,6 @@ export const tabs = [
                 label: 'Records',
                 dest: '/records',
             },
-            {
-                icon: 'history_edu',
-                label: 'Constitution',
-                dest: '/dynasty-knowledge-base?article=constitution',
-            },
 	{
 	    icon: 'lightbulb',
 	    label: 'Resources',

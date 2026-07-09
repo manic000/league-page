@@ -23,7 +23,7 @@
 </script>
 
 <svelte:head>
-	<title>{!page.url.pathname[1] ? 'Home' : page.url.pathname[1].toUpperCase() + page.url.pathname.slice(2)} | BCFFL</title>
+	<title>{!page.url.pathname[1] ? 'Home' : page.url.pathname[1].toUpperCase() + page.url.pathname.slice(2)} | PEFFL</title>
 </svelte:head>
 
 <style>
