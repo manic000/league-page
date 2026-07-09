@@ -520,9 +520,9 @@
             <h6>League Summary</h6>
             <p class="leagueNameLine">{leagueName}</p>
             {@html homepageText }
-            <ul class="summaryLinks">
+            <!-- <ul class="summaryLinks">
                 <li><a href="/dynasty-knowledge-base?article=constitution">📜 Constitution</a></li>
-            </ul>
+            </ul> -->
         </div>
     </aside>
 </div>
