@@ -180,7 +180,7 @@
 <div class="wrapper">
     <h2>Player & Pick Values</h2>
     <p class="meta">
-        Dynasty values from <a href="https://fantasycalc.com" target="_blank" rel="noreferrer">FantasyCalc</a> (1QB, 10-team, 1.0 PPR).
+        Dynasty values from <a href="https://fantasycalc.com" target="_blank" rel="noreferrer">FantasyCalc</a> (2QB, 10-team, 0.5 PPR).
         {#if fetchedAt}Last refreshed {fmtDate(fetchedAt)}.{/if}
     </p>
 
